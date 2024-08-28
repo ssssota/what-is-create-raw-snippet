@@ -1,0 +1,5 @@
+{
+	"editor.tabSize": 2,
+	"editor.defaultFormatter": "svelte.svelte-vscode",
+	"editor.formatOnSave": true
+}
