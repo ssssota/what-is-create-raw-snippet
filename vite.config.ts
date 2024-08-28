@@ -4,13 +4,15 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 type SlidesPluginOptions = { directory: string };
 const slides = ({ directory }: SlidesPluginOptions): Plugin => {
 	const slidesGlob = `/${directory}/*.svelte`;
+	const moduleId = '$slides';
+	const resolvedId = `\0${moduleId}`;
 	return {
 		name: 'slides',
 		resolveId(id) {
-			if (id === '$slides') return id;
+			if (id === moduleId) return resolvedId;
 		},
 		load(id) {
-			if (id === '$slides') {
+			if (id === resolvedId) {
 				return `export default Object.entries(
   import.meta.glob(${JSON.stringify(slidesGlob)}, { eager: true }))
   .sort(([a], [b]) => a.localeCompare(b))

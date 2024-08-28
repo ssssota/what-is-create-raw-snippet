@@ -110,8 +110,7 @@
 	.slide :global(li),
 	.slide :global(dl),
 	.slide :global(table),
-	.slide :global(blockquote),
-	.slide :global(pre) {
+	.slide :global(blockquote) {
 		font-size: calc(var(--base-font-size) * 1.2);
 	}
 	.slide :global(small) {
@@ -121,12 +120,12 @@
 		margin: 0;
 	}
 	.slide :global(pre) {
-		background-color: #f0f0f0;
-		padding: 0.5em;
-		border-radius: 0.5em;
+		font-size: calc(var(--base-font-size) * 0.8);
 	}
-	.slide :global(code) {
-		color: #2f12b3;
+	.slide :global(blockquote) {
+		color: #666;
+		border-left: calc(var(--base-font-size) * 0.25) solid #ccc;
+		padding-left: calc(var(--base-font-size));
 	}
 	@media print {
 		.slide {
